@@ -1,26 +1,33 @@
 {
-    "name": "mxgraph",
-    "version": "3.7.5",
-    "description": "mxGraph is a fully client side JavaScript diagramming library. It is the underlying technology that powers the drawing functionality that you see in https://www.draw.io.",
-    "private": true,
-    "main": "javascript/mxClient.js",
-    "dependencies": {
-    },
-    "devDependencies": {
-    },
-    "scripts": {
-    },
-    "repository": {
-        "type": "git",
-        "url": "https://github.com/jgraph/mxgraph-js.git"
-    },
-    "author": {
-        "name": "JGraph Ltd",
-        "email": "support@jgraph.com"
-    },
-    "license": "mxGraph",
-    "bugs": {
-        "url": "https://github.com/jgraph/mxgraph-js/issues"
-    },
-    "homepage": "https://github.com/jgraph/mxgraph-js"
+  "name": "mxgraph",
+  "version": "3.7.5",
+  "description": "mxGraph is a fully client side JavaScript diagramming library. It is the underlying technology that powers the drawing functionality that you see in https://www.draw.io.",
+  "private": true,
+  "main": "dist/monstergraph.js",
+  "dependencies": {},
+  "devDependencies": {
+    "babel-core": "^6.26.0",
+    "babel-preset-es2015-rollup": "^3.0.0",
+    "babel-preset-stage-3": "^6.24.1",
+    "rollup": "^0.50.0",
+    "rollup-plugin-babel": "^3.0.2",
+    "rollup-plugin-node-globals": "^1.1.0",
+    "rollup-plugin-node-resolve": "^3.0.0",
+    "rollup-plugin-replace": "^2.0.0",
+    "rollup-plugin-uglify": "^2.0.1"
+  },
+  "scripts": {},
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/jgraph/mxgraph-js.git"
+  },
+  "author": {
+    "name": "JGraph Ltd",
+    "email": "support@jgraph.com"
+  },
+  "license": "mxGraph",
+  "bugs": {
+    "url": "https://github.com/jgraph/mxgraph-js/issues"
+  },
+  "homepage": "https://github.com/jgraph/mxgraph-js"
 }
