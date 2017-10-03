@@ -61,4 +61,16 @@ mxResourceExtension: typeof(window.mxResourceExtension) === 'undefined' ? '.txt'
 * (end)
 */
   mxLoadStylesheets: typeof(window.mxLoadStylesheets) === 'undefined',
+  
+  basePath: function() {
+    if (typeof(window.mxBasePath) != 'undefined' && window.mxBasePath.length > 0) {
+      // Adds a trailing slash if required
+      if (window.mxBasePath.substring(window.mxBasePath.length - 1) == '/') {
+        window.mxBasePath = window.mxBasePath.substring(0, mxBasePath.length - 1);
+      }
+      return mxBasePath;
+    } else {
+      return '.';
+    }
+  }(),
 };

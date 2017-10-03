@@ -1,3 +1,4 @@
+import globals from './globals';
 
 const IS_IE6 = navigator.userAgent.indexOf('MSIE 6') >= 0;
 
@@ -16,6 +17,28 @@ const IS_SVG = navigator.userAgent.indexOf('Firefox/') >= 0 || // FF and Camino
 
 function isBrowserSupported() {
   return IS_VML || IS_SVG;
+}
+
+function link(rel, href, doc) {
+	doc = doc || document;
+
+	// Workaround for Operation Aborted in IE6 if base tag is used in head
+	if (IS_IE6)
+	{
+		doc.write('<link rel="' + rel + '" href="' + href + '" charset="UTF-8" type="text/css"/>');
+	}
+	else
+	{	
+		var link = doc.createElement('link');
+		
+		link.setAttribute('rel', rel);
+		link.setAttribute('href', href);
+		link.setAttribute('charset', 'UTF-8');
+		link.setAttribute('type', 'text/css');
+		
+		var head = doc.getElementsByTagName('head')[0];
+		head.appendChild(link);
+	}
 }
 
 export default {
@@ -279,28 +302,7 @@ export default {
 	 * href - String that represents the href attribute of the link node.
 	 * doc - Optional parent document of the link node.
 	 */
-	link(rel, href, doc)
-	{
-		doc = doc || document;
-
-		// Workaround for Operation Aborted in IE6 if base tag is used in head
-		if (IS_IE6)
-		{
-			doc.write('<link rel="' + rel + '" href="' + href + '" charset="UTF-8" type="text/css"/>');
-		}
-		else
-		{	
-			var link = doc.createElement('link');
-			
-			link.setAttribute('rel', rel);
-			link.setAttribute('href', href);
-			link.setAttribute('charset', 'UTF-8');
-			link.setAttribute('type', 'text/css');
-			
-			var head = doc.getElementsByTagName('head')[0];
-			head.appendChild(link);
-		}
-	},
+	link,
 	
 	/**
 	 * Function: include
@@ -334,4 +336,11 @@ export default {
 	// 		}
 	// 	}
 	// }
+
+	init() {
+		// Adds all required stylesheets and namespaces
+		if (globals.mxLoadStylesheets) {
+			link('stylesheet', globals.basePath + '/css/common.css');
+		}
+	},
 };

@@ -10,7 +10,7 @@
   
     <!-- Sets the basepath for the library if not in same directory -->
     <script type="text/javascript">
-      mxBasePath = '../src';
+      mxBasePath = './';
     </script>
   
     <!-- Loads and initializes the library -->
@@ -31,6 +31,8 @@
         }
         else
         {
+          monstergraph.mxClient.init();
+
           // Disables the built-in context menu
           monstergraph.mxEvent.disableContextMenu(container);
           
