@@ -14,6 +14,7 @@ import mxEventObject from '../util/mx_event_object';
 import mxImage from '../util/mx_image';
 import mxRectangle from '../util/mx_rectangle';
 import mxPoint from '../util/mx_point';
+import mxDictionary from '../util/mx_dictionary';
 import {
 	mxGraphModel,
 	mxRootChange,
@@ -21,6 +22,8 @@ import {
 	mxTerminalChange,
 	mxVisibleChange,
 	mxCellAttributeChange,
+	mxGeometryChange,
+	mxValueChange,
 } from '../model/mx_graph_model';
 import mxTooltipHandler from '../handler/mx_tooltip_handler';
 import mxSelectionCellsHandler from '../handler/mx_selection_cells_handler';
@@ -28,6 +31,7 @@ import mxConnectionHandler from '../handler/mx_connection_handler';
 import mxGraphHandler from '../handler/mx_graph_handler';
 import mxPanningHandler from '../handler/mx_panning_handler';
 import mxPopupMenuHandler from '../handler/mx_popup_menu_handler';
+import mxVertexHandler from '../handler/mx_vertex_handler';
 import mxConnectionConstraint from './mx_connection_constrain';
 import mxGeometry from '../model/mx_geometry';
 import mxCell from '../model/mx_cell';

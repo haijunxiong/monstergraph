@@ -7,6 +7,11 @@ import mxClient from '../mx_client';
 import mxUtils from '../util/mx_utils';
 import mxEvent from '../util/mx_event';
 import mxConstants from '../util/mx_constants';
+import mxRectangle from '../util/mx_rectangle';
+import mxPoint from '../util/mx_point';
+import mxRectangleShape from '../shape/mx_rectangle_shape';
+
+import mxCellHighlight from './mx_cell_highlight';
 
 /**
  * Class: mxGraphHandler

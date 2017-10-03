@@ -8,7 +8,10 @@ import mxEvent from '../util/mx_event';
 import mxEventSource from '../util/mx_event_source';
 import mxEventObject from '../util/mx_event_object';
 import mxUndoableEdit from '../util/mx_undoable_edit';
+import mxDictionary from '../util/mx_dictionary';
+
 import mxCell from './mx_cell';
+import mxCellPath from './mx_cell_path';
 
 /**
  * Class: mxGraphModel
@@ -2682,5 +2685,7 @@ export {
   mxChildChange,
   mxTerminalChange,
   mxVisibleChange,
-  mxCellAttributeChange,
+	mxCellAttributeChange,
+	mxGeometryChange,
+	mxValueChange,
 };

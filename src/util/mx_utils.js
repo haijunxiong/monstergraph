@@ -745,33 +745,25 @@ function get(url, onload, onerror, binary, timeout, ontimeout) {
 	return req;
 }
 
-function clone(obj, transients, shallow)
-{
+function clone(obj, transients, shallow) {
 	shallow = (shallow != null) ? shallow : false;
-	var clone = null;
+	let _clone = null;
 	
-	if (obj != null && typeof(obj.constructor) == 'function')
-	{
-		clone = new obj.constructor();
-		
-			for (var i in obj)
-			{
-				if (i != mxObjectIdentity.FIELD_NAME && (transients == null ||
-					indexOf(transients, i) < 0))
-				{
-					if (!shallow && typeof(obj[i]) == 'object')
-					{
-								clone[i] = clone(obj[i]);
-						}
-						else
-						{
-								clone[i] = obj[i];
-						}
+	if (obj != null && typeof(obj.constructor) == 'function') {
+		_clone = new obj.constructor();
+		for (var i in obj) {
+			if (i != mxObjectIdentity.FIELD_NAME &&
+					(transients == null || indexOf(transients, i) < 0)
+			) {
+				if (!shallow && typeof(obj[i]) == 'object') {
+					_clone[i] = clone(obj[i]);
+				} else {
+					_clone[i] = obj[i];
+				}
 			}
-			}
+		}
 	}
-	
-		return clone;
+	return _clone;
 }
 
 function getFunctionName(f) {

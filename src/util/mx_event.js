@@ -4,6 +4,7 @@
  */
 
 import mxClient from '../mx_client';
+import mxUtils from './mx_utils';
 import mxMouseEvent from './mx_mouse_event';
 
 const mxEventConsts = {

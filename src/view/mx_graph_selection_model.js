@@ -10,6 +10,7 @@ import mxUtils from '../util/mx_utils';
 import mxLog from '../util/mx_log';
 import mxResources from '../util/mx_resources';
 import mxEvent from '../util/mx_event';
+import mxUndoableEdit from '../util/mx_undoable_edit';
 
 /**
  * Class: mxGraphSelectionModel

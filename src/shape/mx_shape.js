@@ -9,6 +9,7 @@ import mxConstants from '../util/mx_constants';
 import mxSvgCanvas2D from '../util/mx_svg_canvas_2d';
 import mxRectangle from '../util/mx_rectangle';
 import mxPoint from '../util/mx_point';
+import mxEvent from '../util/mx_event';
 
 /**
  * Class: mxShape
